@@ -9,18 +9,51 @@
     <title>TEST</title>
 </head>
 <body>
-    <h1>
-HI
+ 
+ <h1 id="heading"> This is a heading</h1>
+ <div> whatup</div>
+ 
+ <p>Paragraph 1</p>
+ <p>Paragraph 2</p>
 
-    </h1>
 
-    <h2>
-borders are fun
-borders are fun
-borders are funborders are fun
-borders are funborders are funborders are funborders are funborders are fun
 
-    </h2>
+ <button id="button"> WEEEEEE!!!</button>
+
+ <script>
+
+let button1= document.getElementById("button");
+    console.log(button1);
+
+    let headingE1= document.getElementById("heading");
+    console.log(headingE1);
+
     
+
+
+  
+    
+
+button1.addEventListener('click', function(){
+    console.log('iveoaijsdf');
+})
+
+setInterval (function(){
+    let randomNumber =(Math.random()*40)+10;
+
+    let newFontSize = Math.round(randomNumber);
+   
+    headingE1.style.fontSize= newFontSize + 'px';
+    console.log('hello');
+}, 100);
+
+
+
+
+
+ </script>
+
+<!-- <script src="script.js">
+</script> -->
 </body>
 </html>
