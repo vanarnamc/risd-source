@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 60px;
+            font-family: sans-serif;
+            text-align: center;
+            animation: 1s blink infinite;
+        }
+        @keyframes blink{
+            50%{
+
+                opacity: 0.0;
+                /* font-size: 0px; */
+            }
+
+
+        }
+
+        .blink{
+            animation: blink 1s step-start 0s infinite;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <p id="currentTemperature"></p>
+    
+    <script>
+        let tempEl = document.querySelector('#currentTemperature');
+        
+
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&current_weather=true&temperature_unit=fahrenheit';
+
+fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+    // console.log(data);
+    
+     let currentTemp = data ['current_weather']['temperature'];
+     tempEl.innerText = currentTemp;
+
+     if (currentTemp>60){
+        document.body.style.backgroundColor = 'orange';
+     } else {
+        document.body.style.backgroundColor = 'blue';
+        tempEl.style.color = 'white';
+
+     }
+
+     console.log(data);
+     let windSpeed = data['current_weather']['windspeed'];
+     console.log(windSpeed);
+     tempEl.style.animation = windSpeed + 's blink infinite';
+
+     }  
+     //tempEl.innerText = ('Temperature', data["current_weather"]["temperature"])+'º';
+  );
+
+  document.onmousemove = (event) => {
+  const {
+    clientX,
+    clientY
+  } = event
+  console.log(clientX, clientY)
+  document.getElementById("currentTemperature").style.fontSize = clientX+"px";
+
+}
+
+
+
+
+    </script>
+
+</body>
+</html>

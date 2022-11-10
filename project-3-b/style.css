@@ -1,0 +1,13 @@
+header{
+ overflow: hidden;
+}
+
+ input {
+  position: absolute;
+  left: -9999px;  
+  &#chord-1:checked ~ ul label[for"chord-1"]{
+    background: red;
+
+  }
+}
+

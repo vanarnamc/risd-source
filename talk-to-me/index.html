@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talk to Me</title>
+    <style>
+        .big-type {
+            color: green;
+            font-size: 68px;
+            font-family: sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="form-example">
+        <label for="color-input">ENTER A COLOR </label>
+        <input name="color-input" id="color" required>
+    </div>
+    <div class="form-example">
+        <label for="coloumn-input">SELECT NUMBER OF COLUMNS </label>
+        <input type="range" name="coloumn-input" id="column" required>
+    </div>
+    <div class="form-example">
+        <label for="name-input">YourName </label>
+        <input name="name-input" id="name" required>
+    </div>
+
+    <div class="form-example">
+        <label for="body-size-input">Body Size</label>
+        <input type="range" name="body-size-input" id="body-size" required>
+    </div>
+
+    </form>
+    <div class="text body-size">
+        <p>Be so very light. Be a gentle whisper. All kinds of happy little splashes. The man who does the best job is
+            the one who is happy at his job. All those little son of a guns. Let's have a happy little tree in here.</p>
+        <p>Fluff it up a little and hypnotize it. Let all these things just sort of happen. If what you're doing doesn't
+            make you happy - you're doing the wrong thing.</p>
+        <p>Just let go - and fall like a little waterfall. These things happen automatically. All you have to do is just
+            let them happen. Everybody needs a friend. You don't want to kill all your dark areas they are very
+            important. This is the time to get out all your flustrations, much better than kicking the dog around the
+            house or taking it out on your spouse. Let's have a nice tree right here.</p>
+        <p>No worries. No cares. Just float and wait for the wind to blow you around. Take your time. Speed will come
+            later. You can get away with a lot.</p>
+        <p>If you do too much it's going to lose its effectiveness. Mix your color marbly don't mix it dead. It's cold,
+            but it's beautiful. Let that brush dance around there and play.</p>
+        <p>Let's make a nice big leafy tree. Decide where your cloud lives. Maybe he lives right in here. Brown is such
+            a nice color.</p>
+        <p>Anytime you learn something your time and energy are not wasted. Everybody's different. Trees are different.
+            Let them all be individuals. If it's not what you want - stop and change it. Don't just keep going and
+            expect it will get better. I spend a lot of time walking around in the woods and talking to trees, and
+            squirrels, and little rabbits and stuff. Just think about these things in your mind - then bring them into
+            your world.</p>
+
+
+    </div>
+
+    <div class="big-type">
+        YOUR NAME
+
+    </div>
+
+    <script>
+        let input = document.querySelector('#color')
+        input.addEventListener('input', () => {
+            let value = input.value;
+            console.log(value);
+            let bodyEl = document.querySelector('body');
+            bodyEl.style.backgroundColor = value;
+        }
+        );
+
+
+        let columnInputEl = document.querySelector('#column');
+        columnInputEl.addEventListener('input', () => {
+            let value = columnInputEl.value;
+            let textEl = document.querySelector('.text');
+            textEl.style.columns = value;
+        }
+        );
+
+        let nameInputEl = document.querySelector('#name');
+        nameInputEl.addEventListener('input', () => {
+            let value = nameInputEl.value;
+            let nameEl = document.querySelector('.big-type');
+            nameEl.innerText = value;
+        }
+        );
+
+        let bodySizeInputEl = document.querySelector('#body-size');
+        bodySizeInputEl.addEventListener('input', () => {
+            let value = bodySizeInputEl.value;
+            let bodySizeEl = document.querySelector('.body-size');
+            bodySizeEl.style.fontSize= value +'px';
+        }
+        );
+
+
+
+    </script>
+</body>
+
+</html>

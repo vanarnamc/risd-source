@@ -1,59 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-
-    <title>TEST</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
- 
- <h1 id="heading"> This is a heading</h1>
- <div> whatup</div>
- 
- <p>Paragraph 1</p>
- <p>Paragraph 2</p>
-
-
-
- <button id="button"> WEEEEEE!!!</button>
-
- <script>
-
-let button1= document.getElementById("button");
-    console.log(button1);
-
-    let headingE1= document.getElementById("heading");
-    console.log(headingE1);
-
-    
-
-
-  
-    
-
-button1.addEventListener('click', function(){
-    console.log('iveoaijsdf');
-})
-
-setInterval (function(){
-    let randomNumber =(Math.random()*40)+10;
-
-    let newFontSize = Math.round(randomNumber);
-   
-    headingE1.style.fontSize= newFontSize + 'px';
-    console.log('hello');
-}, 100);
-
-
-
-
-
- </script>
-
-<!-- <script src="script.js">
-</script> -->
+<canvas width="600" height="600"></canvas>
 </body>
+<script>
+let canvas =document.querySelector('canvas');
+let context = canvas.getContext('2d');
+
+context.fillStyle='blue';
+// context.fillRect(100,100,100,100);
+
+
+
+
+context.lineWidth=4;
+// context.beginPath();
+// context.rect(100,100,400,400);
+// context.stroke();
+
+
+// context.beginPath();
+// context.arc(300,300,100,0,Math.PI*2);
+// context.stroke();
+const gap=20;
+const width = 60;
+const height = 60;
+let x, y;
+for (let i=0; i<5; i++){
+  for (let j=0; j<5;j++ ){
+
+ x= 100 +(width+gap) *i;
+ y= 100 +(height+gap) *j;
+
+
+context.beginPath();
+context.rect(x,y,width,height);
+context.stroke();
+
+if (Math.random()>.5){
+context.beginPath();
+context.rect(x+8, y+8, width-16, height-16);
+context.stroke();
+    }
+  }
+}
+
+
+
+
+
+
+let dinner= ' pasta';
+let sentence = 'Tonight, dinner will be'+ dinner;
+
+function saySomething(param){
+  console.log(param);
+}
+saySomething(sentence);
+
+function add(a,b){
+return a+b;
+}
+
+let result = add(5,7);
+console.log(result);
+
+
+let multiply=(a,b) =>{
+return a*b;
+}
+
+console.log(multiply(5,7));
+
+
+let years = [];
+let menu= ['starter', 'main', 'desert', 'drinks', 'sides'];
+
+for (let i=0; i<menu.length; i++) {
+console.log(menu[i]);
+}
+
+
+for (let i =0; i<10; i++){
+years.push(2040+i);
+
+}
+console.log(years);
+
+
+
+
+
+</script>
+
 </html>
