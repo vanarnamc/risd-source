@@ -184,7 +184,7 @@ class Pendulum {
     line(x, 20, width / 2, 0);
     textAlign(CENTER, CENTER);
     textSize(25);
-    text(name.toUpperCase(), x, 10, 25, 25);
+    text(name.toUpperCase(), x, 10);
     //ellipse(x, 50, 25, 25);
   }
 }
