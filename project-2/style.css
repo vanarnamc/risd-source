@@ -25,6 +25,13 @@
   z-index: -1;
 }
 
+@media only screen and (max-device-width: 480px) {
+  body
+  {
+    font-size: 10.0vw !important;
+  }
+      }
+
 body {
     font-family:'Favorit', sans-serif;
     display: flex;
